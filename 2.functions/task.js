@@ -4,7 +4,9 @@ function getArrayParams(...arr) {
   let summ = 0;
   let avg = 0;
 
-  if (arr.length != 0) { //проверка наличия элементов в функции
+  if (arr.length == 0) { //проверка наличия элементов в функции
+    return 0;
+  } else {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] < min) {
         min = arr[i];
@@ -18,21 +20,23 @@ function getArrayParams(...arr) {
     }
   
     avg = Number((summ / arr.length).toFixed(2));
-  }
 
-  return { min: min, max: max, avg: avg };
+    return { min: min, max: max, avg: avg};
+  }
 }
 
 function summElementsWorker(...arr) {
   let summ = 0;
 
-  if (arr.length != 0) { //проверка наличия элементов в функции
+  if (arr.length == 0) { //проверка наличия элементов в функции
+    return 0;
+  } else {
     for (let i = 0; i < arr.length; i++) {
       summ += arr[i];
     }
-  }
   
-  return summ;
+    return summ;
+  }
 }
 
 function differenceMaxMinWorker(...arr) {
