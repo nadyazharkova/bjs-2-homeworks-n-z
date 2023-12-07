@@ -1,8 +1,8 @@
 function getArrayParams(...arr) {
   let min = Infinity;
   let max = -Infinity;
+  let summ = 0;
   let avg = 0;
-  let amount;
 
   if (arr.length != 0) { //проверка наличия элементов в функции
     for (let i = 0; i < arr.length; i++) {
@@ -14,11 +14,10 @@ function getArrayParams(...arr) {
         max = arr[i];
       }
   
-      avg += arr[i];
-      amount = arr.length;
+      summ += arr[i];
     }
   
-    avg = Number((avg / amount).toFixed(2));
+    avg = Number((summ / arr.length).toFixed(2));
   }
 
   return { min: min, max: max, avg: avg };
@@ -67,7 +66,7 @@ function differenceEvenOddWorker(...arr) {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] % 2 == 0 ) {
         sumEvenElement += arr[i];
-      } else if (arr[i] % 2 != 0 ) {
+      } else {
         sumOddElement += arr[i];
       }
     }
