@@ -40,7 +40,9 @@ function differenceMaxMinWorker(...arr) {
   let max = -Infinity;
   let difference = 0;
 
-  if (arr.length != 0) { //проверка наличия элементов в функции
+  if (arr.length == 0) { //проверка наличия элементов в функции
+    return 0;
+  } else {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] > max) {
         max = arr[i];
@@ -52,9 +54,9 @@ function differenceMaxMinWorker(...arr) {
     }
 
     difference = max - min;
-  }
 
-  return difference;
+    return difference;
+  }
 }
 
 function differenceEvenOddWorker(...arr) {
@@ -62,7 +64,9 @@ function differenceEvenOddWorker(...arr) {
   let sumOddElement = 0;
   let difference = 0;
 
-  if (arr.length != 0) { //проверка наличия элементов в функции
+  if (arr.length == 0) { //проверка наличия элементов в функции
+    return 0;
+  } else {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] % 2 == 0 ) {
         sumEvenElement += arr[i];
@@ -72,9 +76,9 @@ function differenceEvenOddWorker(...arr) {
     }
 
     difference = sumEvenElement - sumOddElement;
-  }
 
-  return difference;
+    return difference;
+  }
 }
 
 function averageEvenElementsWorker(...arr) {
@@ -82,7 +86,9 @@ function averageEvenElementsWorker(...arr) {
   let countEvenElement = 0;
   let average = 0;
 
-  if (arr.length != 0) { //проверка наличия элементов в функции
+  if (arr.length == 0) { //проверка наличия элементов в функции
+    return 0;
+  } else { //проверка наличия элементов в функции
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] % 2 == 0 ) {
         sumEvenElement += arr[i];
@@ -91,9 +97,9 @@ function averageEvenElementsWorker(...arr) {
     }
 
     average = sumEvenElement / countEvenElement;
-  }
 
-  return average;
+    return average;
+  }
 }
 
 function makeWork (arrOfArr, func) {
